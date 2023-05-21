@@ -19,7 +19,7 @@
 
     <div id="navbar">
       <div id="logo-div">
-        <img src=""></img>
+        <img src="./assets/parkinsons-logo.png" width="80%" height="80%"></img>
       </div> 
       <div id="buttons-div">
         <div id="about-page-btn">About</div>
@@ -30,6 +30,9 @@
     
     <div id="about-page">
       <h1>Parkinson's Risk Evaluator</h1>
+      <div style="width: 25%; height: 50%;">
+        <img src="./assets/parkinsons-logo.png" width="80%" height="80%"></img>
+      </div>
       <hr style="border: 2px solid black; width: 5rem"><br>
       <div>Quick tests for risk of Parkinson's Disease, right at home.</div>
     </div>
@@ -50,8 +53,8 @@
         <br><br>
         <div style="display: flex">
           <label>
-            <div id="spiral-upload-btn">
-            <input id="student-file" hidden type="file" onchange="saveFile(this, 'student')"/>
+            <div class="upload-btn">
+            <input id="spiral-file-input" hidden type="file" onchange="saveFile('drawing', this)"/>
             <div style="margin-right: 0.5rem;">
               <img src="./assets/upload-icon.svg">
             </div>
@@ -70,31 +73,41 @@
         <b>Directions: </b> Hit the "Record" button, allow access to your device's microphone, then speak the following "". 
         <br><br>
         <div style="display: flex">
-          <input type="file" accept="audio/*" capture id="recorder" />
+          <!-- audio -->
+          <!-- <input type="file" accept="audio/*" capture id="recorder" />
           <audio id="player" controls></audio>
-          <script>
-            const player = document.getElementById('player');
+            <script>
+              const recorder = document.getElementById('recorder');
+              const player = document.getElementById('player');
+          
+              recorder.addEventListener('change', function (e) {
+                const file = e.target.files[0];
+                const url = URL.createObjectURL(file);
+                // Do something with the audio file.
+                player.src = url;
+              });
 
-            const handleSuccess = function (stream) {
-              if (window.URL) {
-                player.srcObject = stream;
-              } else {
-                player.src = stream;
-              }
-            };
+              const handleSuccess = function (stream) {
+                if (window.URL) {
+                  player.srcObject = stream;
+                } else {
+                  player.src = stream;
+                }
+              };
 
-            navigator.mediaDevices
-              .getUserMedia({audio: true, video: false})
-              .then(handleSuccess);
-          </script>
+              navigator.mediaDevices
+                .getUserMedia({audio: true, video: false})
+                .then(handleSuccess);
+            </script> -->
+          <!-- audio -->
 
           <label>
-            <div id="spiral-upload-btn">
-            <input id="student-file" hidden type="file" onchange="saveFile(this, 'student')"/>
+            <div class="upload-btn">
+            <input id="voice-file-input" hidden type="file" onchange="saveFile('voice', this)"/>
             <div style="margin-right: 0.5rem; display: flex; align-items: center; justify-content: center;">
-              <img src="./assets/record-icon.svg" width="15rem" height="15rem">
+              <img src="./assets/upload-icon.svg">
             </div>
-            <div>Record</div>
+            <div>Upload</div>
           </div>
           </label>
         </div>

@@ -28,7 +28,9 @@ a {
   // background-color: white;
 }
 
-#logo {
+#logo-div {
+  width: 3.4rem;
+  height: 3rem;
 }
   
 #buttons-div {
@@ -87,7 +89,7 @@ a {
   @include text-blocks;
 }
 
-#spiral-upload-btn {
+.upload-btn {
   display: flex;
   padding: 0.5rem 1rem 0.5rem 1rem;
   border-radius: 0.3rem;

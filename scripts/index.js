@@ -39,18 +39,32 @@ referencesPageBtnDiv.addEventListener("click", () => {
 
 
 let drawingFile = null; // spiral drawing file stored here
+let voiceFile = null; // voice file stored here
 
-const saveFile = async (input) => {
-  // Validate file type (room layout file must be txt)
-  if (input.files[0].name.toLowerCase().lastIndexOf(".png") == -1 && 
-      input.files[0].name.toLowerCase().lastIndexOf(".jpg") == -1 
-      ) {
-    alert("Please upload a .png or .jpg file.");
-    return;
+const saveFile = async (type, input) => {
+  if (type == "drawing") {
+    if (input.files[0].name.toLowerCase().lastIndexOf(".png") == -1 && 
+        input.files[0].name.toLowerCase().lastIndexOf(".jpg") == -1 
+        ) {
+      alert("Please upload a .png or .jpg file.");
+      return;
+    }
+    else {
+      console.log(`uploaded ${input.files[0].name}`); // display file name
+      drawingFile = input.files[0]; // store file content in variable
+    }
   }
-  
-  console.log(`uploaded ${input.files[0].name}`); // display file name
-  drawingFile = input.files[0]; // store file content in variable
+
+  if (type == "voice") {
+    if (input.files[0].name.toLowerCase().lastIndexOf(".wav") == -1) {
+      alert("Please upload a .wav file.");
+      return;
+    } 
+    else {
+      console.log(`uploaded ${input.files[0].name}`); // display file name
+      voiceFile = input.files[0]; // store file content in variable
+    }
+  }
 }
 
 

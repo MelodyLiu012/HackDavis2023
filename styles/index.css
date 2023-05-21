@@ -23,6 +23,11 @@ a {
   width: 100%;
 }
 
+#logo-div {
+  width: 3.4rem;
+  height: 3rem;
+}
+
 #buttons-div {
   display: flex;
   font-weight: bold;
@@ -78,7 +83,7 @@ a {
   margin-bottom: 1.5rem;
 }
 
-#spiral-upload-btn {
+.upload-btn {
   display: flex;
   padding: 0.5rem 1rem 0.5rem 1rem;
   border-radius: 0.3rem;
@@ -86,7 +91,7 @@ a {
   font-weight: 600;
   border: 3px solid gray;
 }
-#spiral-upload-btn:hover {
+.upload-btn:hover {
   background-color: rgba(0, 0, 0, 0.1);
   cursor: pointer;
 }
