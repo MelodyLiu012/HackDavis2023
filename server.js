@@ -13,7 +13,28 @@ app.use(express.static(path.join(__dirname)));
 
 // establish the home page of the website
 app.get("/", (req, res) => {
+  res.status(200);
   res.render('about');
+});
+
+app.get("/test", (req, res) => {
+  res.status(200);
+  res.render('test');
+});
+
+app.get("/references", (req, res) => {
+  res.status(200);
+  res.render('references');
+});
+
+app.get("/result", (req, res) => {
+  res.status(200);
+  res.render('result');
+});
+
+app.get("/:invalid_link", (req, res) => {
+  res.status(404);
+  res.send(`Error: "${req.params.invalid_link}" is not a valid link extension`)
 });
 
 // server is hosted @ localhost:3000
