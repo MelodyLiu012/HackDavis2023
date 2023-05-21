@@ -1,0 +1,112 @@
+@import './colors.scss';
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url(../assets/OpenSans-VariableFont.ttf) format('truetype');
+}
+
+body {
+  margin: 0;
+  overflow: hidden;
+  // background-image: linear-gradient(to bottom, $mint-green, $light-yellow);
+  background-image: url(../assets/trees2.png);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  color: black;
+  font-family: 'Open Sans';
+}
+
+a {
+  color: rgb(66, 130, 130);
+}
+
+#navbar {
+  display: flex;
+  padding: 1.5rem 1.5rem 0rem 1.5rem;
+  width: 100%;
+  // background-color: white;
+}
+
+#logo {
+}
+  
+#buttons-div {
+  display: flex;
+  font-weight: bold;
+  justify-content: space-around;
+
+  div {
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    // border-radius: 0.3rem;
+    margin: 0.3rem;
+    // background-color: $light-yellow;
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.6);
+      cursor: pointer;
+    }
+  }
+}
+
+@mixin page() {
+  height: 83vh;
+  padding: 1.5rem;
+  overflow-y: scroll;
+  // background-color: green;
+}
+
+@mixin text-blocks() {
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+#test-page {
+  @include page;
+}
+#about-page {
+  @include page;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#references-page {
+  @include page;
+
+  div {
+    @include text-blocks;
+  }
+}
+
+#spiral-div {
+  @include text-blocks;
+}
+#voice-div {
+  @include text-blocks;
+}
+
+#spiral-upload-btn {
+  display: flex;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  border-radius: 0.3rem;
+  margin: 0.3rem;
+  font-weight: 600;
+  border: 3px solid gray;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+}
+
+#trees-overlay {
+  position: absolute;
+  opacity: 9%;
+  width: 100vw;
+  top: 0%;
+  left: 0%;
+}
+
+
