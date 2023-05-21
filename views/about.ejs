@@ -33,75 +33,6 @@
       <hr style="border: 2px solid black; width: 5rem"><br>
       <div>Quick tests for risk of Parkinson's Disease, right at home.</div>
     </div>
-
-    <!-- <div id="trees-overlay">
-      <img src="../assets/trees.jpg">
-    </div> -->
-
-    <div id="test-page">
-      <!-- <h2>
-        Quick Tests for Risk of Parkinson's Disease
-      </h2> -->
-      <div id="spiral-div">
-        <h2>Spiral Drawing Test</h2>
-        How this test works<br><br>
-        <b>Requirements: </b>pen/pencil, paper<br>
-        <b>Directions: </b> Using your writing tool, draw a spiral on your paper. Then take a picture of your drawing and upload it to predict your likelihood of having Parkinson's disease.
-        <br><br>
-        <div style="display: flex">
-          <label>
-            <div id="spiral-upload-btn">
-            <input id="student-file" hidden type="file" onchange="saveFile(this, 'student')"/>
-            <div style="margin-right: 0.5rem;">
-              <img src="./assets/upload-icon.svg">
-            </div>
-            <div>Upload</div>
-          </div>
-          </label>
-          
-        </div>
-      </div>
-
-      <div id="voice-div">
-        
-        <h2>Voice Test</h2>
-        How this test works<br><br>
-        <b>Requirements: </b>microphone access<br>
-        <b>Directions: </b> Hit the "Record" button, allow access to your device's microphone, then speak the following "". 
-        <br><br>
-        <div style="display: flex">
-          <input type="file" accept="audio/*" capture id="recorder" />
-          <audio id="player" controls></audio>
-          <script>
-            const player = document.getElementById('player');
-
-            const handleSuccess = function (stream) {
-              if (window.URL) {
-                player.srcObject = stream;
-              } else {
-                player.src = stream;
-              }
-            };
-
-            navigator.mediaDevices
-              .getUserMedia({audio: true, video: false})
-              .then(handleSuccess);
-          </script>
-
-          <label>
-            <div id="spiral-upload-btn">
-            <input id="student-file" hidden type="file" onchange="saveFile(this, 'student')"/>
-            <div style="margin-right: 0.5rem; display: flex; align-items: center; justify-content: center;">
-              <img src="./assets/record-icon.svg" width="15rem" height="15rem">
-            </div>
-            <div>Record</div>
-          </div>
-          </label>
-        </div>
-      </div>
-    </div>
-    
-    <div id="references-page">
       <div>
         <h3>What is Parkinson's Disease?</h3>
         Parkinson's disease is a brain disorder that typically begins gradually and gets worse over time. 
@@ -149,8 +80,5 @@
       <a href="https://www.nia.nih.gov/health/parkinsons-disease">National Institute of Health</a> <br>
       <a href="https://www.medicalnewstoday.com/articles/320527">Medical News Today (Medically Reviewed Article)</a>
     </div>
-
-    
-    <script src="./scripts/index.js" async defer></script>
   </body>
 </html>

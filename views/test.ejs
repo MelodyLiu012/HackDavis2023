@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./styles/index.css">
+  </head>
+  <body>
+    <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <div id="navbar">
+      <div id="logo-div">
+        <img src=""></img>
+      </div> 
+      <div id="buttons-div">
+        <div id="about-page-btn">About</div>
+        <div id="test-page-btn">Tests</div>
+        <div id="references-page-btn">References</div>
+      </div>
+    </div>
+
+    <div id="test-page">
+      <!-- <h2>
+        Quick Tests for Risk of Parkinson's Disease
+      </h2> -->
+      <div id="spiral-div">
+        <h2>Spiral Drawing Test</h2>
+        How this test works<br><br>
+        <b>Requirements: </b>pen/pencil, paper<br>
+        <b>Directions: </b> Using your writing tool, draw a spiral on your paper. Then take a picture of your drawing and upload it to predict your likelihood of having Parkinson's disease.
+        <br><br>
+        <div style="display: flex">
+          <label>
+            <div id="spiral-upload-btn">
+            <input id="student-file" hidden type="file" onchange="saveFile(this, 'student')"/>
+            <div style="margin-right: 0.5rem;">
+              <img src="./assets/upload-icon.svg">
+            </div>
+            <div>Upload</div>
+          </div>
+          </label>
+          
+        </div>
+      </div>
+
+      <div id="voice-div">
+        
+        <h2>Voice Test</h2>
+        How this test works<br><br>
+        <b>Requirements: </b>microphone access<br>
+        <b>Directions: </b> Hit the "Record" button, allow access to your device's microphone, then speak the following "". 
+        <br><br>
+        <div style="display: flex">
+          <input type="file" accept="audio/*" capture id="recorder" />
+          <audio id="player" controls></audio>
+          <script>
+            const player = document.getElementById('player');
+
+            const handleSuccess = function (stream) {
+              if (window.URL) {
+                player.srcObject = stream;
+              } else {
+                player.src = stream;
+              }
+            };
+
+            navigator.mediaDevices
+              .getUserMedia({audio: true, video: false})
+              .then(handleSuccess);
+          </script>
+
+          <label>
+            <div id="spiral-upload-btn">
+            <input id="student-file" hidden type="file" onchange="saveFile(this, 'student')"/>
+            <div style="margin-right: 0.5rem; display: flex; align-items: center; justify-content: center;">
+              <img src="./assets/record-icon.svg" width="15rem" height="15rem">
+            </div>
+            <div>Record</div>
+          </div>
+          </label>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
